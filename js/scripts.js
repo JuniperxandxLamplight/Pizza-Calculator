@@ -40,7 +40,8 @@ $(function(){
     newOrder.addPizza(sizeInput, crustInput, sauceInput, cheeseTypeInput, cheeseAmmountInput, meatsInput, veggiesInput);
   });
 
-  $("form.pizzaSelector").submit(function(){
+  $(".pizzaSelector").submit(function(event){
+    event.preventDefault();
     var sizeInput = $("#size").val();
     var crustInput = $("#crust").val();
     var sauceInput = $("#sauce").val();
@@ -55,6 +56,6 @@ $(function(){
     newOrder.addPizza(sizeInput, crustInput, sauceInput, cheeseTypeInput, cheeseAmmountInput, meatsInput, veggiesInput);
 
     $(".pizzaSelector").slideUp(1500);
-    
+    $(".result").delay(1400).fadeIn("slow");
   });
 });
