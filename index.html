@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+  <head>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Pizza Price Caluculator</title>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Pizza Price Calculator</h1>
+      <button class="btn btn-outline-secondary" type="button" id="start">Start</button>
+    </div>
+    <div class="pizzaSelector">
+      <form>
+        <h4>Select Pizza Base:</h4>
+        <label for="size">Size</label>
+        <select id="size" class="form-control">
+          <option>Small (12")</option>
+          <option>Medium (16")</option>
+          <option>Large (20")</option>
+          <option>Extra Large (28")</option>
+        </select>
+        <label for="crust">Crust</label>
+        <select id="crust" class="form-control">
+          <option>Thin</option>
+          <option>Thick</option>
+          <option>Stuffed</option>
+          <option>Deep Dish</option>
+          <option>**Gluten Free</option>
+        </select>
+        <label for="sauce">Sauce</label>
+        <select id="sauce" class="form-control">
+          <option>**Marinara</option>
+          <option>Cream</option>
+          <option>*Pesto</option>
+          <option>Garlic Oil</option>
+        </select>
+        <label for="cheeseType">Type of Cheese</label>
+        <select id="cheeseType" class="form-control">
+          <option>Mozzerlla</option>
+          <option>Fontina</option>
+          <option>Gouda</option>
+          <option>Vegan</option>
+        </select>
+        <label for="cheeseAmmount">Ammount of Cheese</label>
+        <select id="cheeseAmmount" class="form-control">
+          <option>Light</option>
+          <option>Medium</option>
+          <option>Extra</option>
+          <option>*Vegan</option>
+        </select>
+
+        <h4>Choose Toppings:</h4>
+        <h5>Meats</h5>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="Pepperoni" id="pepperoni">
+          <label class="form-check-label" for="pepperoni">
+            Pepperoni
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="Sausage" id="sausage">
+          <label class="form-check-label" for="sausage">
+            Sausage
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="Chicken" id="chicken">
+          <label class="form-check-label" for="chicken">
+            Chicken
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="Brisket" id="brisket">
+          <label class="form-check-label" for="brisket">
+            Brisket
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="Bacon " id="bacon">
+          <label class="form-check-label" for="bacon">
+            Bacon
+          </label>
+        </div>
+        <h5>Veggies</h5>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="Artichoke Hearts" id="artichokeHearts">
+          <label class="form-check-label" for="artichokeHearts">
+            Artichoke Hearts
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="Arugala" id="arugala">
+          <label class="form-check-label" for="arugala">
+            Arugala
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="Black Olives" id="blackOlives">
+          <label class="form-check-label" for="blackOlives">
+            Black Olives
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="Fresh Tomatos" id="freshTomatos">
+          <label class="form-check-label" for="freshTomatos">
+            Fresh Tomatos
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="Green Olives" id="greenOlives">
+          <label class="form-check-label" for="greenOlives">
+            Green Olives
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="Mushrooms" id="mushrooms">
+          <label class="form-check-label" for="mushrooms">
+            Mushrooms
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="Onions" id="onions">
+          <label class="form-check-label" for="onions">
+            Onions
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="Spinach" id="spinach">
+          <label class="form-check-label" for="spinach">
+            Spinach
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="Roasted Peppers" id="roastedPeppers">
+          <label class="form-check-label" for="roastedPeppers">
+            Roasted Peppers
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="Sun Dried Tomatos" id="sunDriedTomatos">
+          <label class="form-check-label" for="sunDriedTomatos">
+            Sun Dried Tomatos
+          </label>
+        </div>
+
+        <p>*Vegetarian</p>
+        <p>**Gluten Free</p>
+        <button class="btn btn-outline-secondary" type="submit" id="submit"></button>
+      </form>
+    </div>
+  </body>
+</html>
