@@ -6,13 +6,13 @@ function Order(){
 Order.prototype.addPizza = function(size, crust, sauce, cheeseType, cheeseAmmount, meats, veggies){
   this.items += 1;
   var newPizza = new Pizza(size, crust, sauce, cheeseType, cheeseAmmount, meats, veggies);
-  newPizza.name = "Pizza " + this.items;
+  newPizza.id = "Pizza " + this.items;
   this.pizzas.push(newPizza);
 };
 
-Order.prototype.findPizza = function(name){
+Order.prototype.findPizza = function(id){
   for (var i=0; i< this.pizzas.length; i++) {
-      if (this.pizzas[i].name == name) {
+      if (this.pizzas[i].id == id) {
         return this.pizzas[i];
       }
     };
@@ -55,7 +55,7 @@ Order.prototype.checkPrice = function(){
 };
 
 function Pizza(size, crust, sauce, cheeseType, cheeseAmmount, meats, veggies){
-  this.name = name;
+  this.id;
   this.size = size;
   this.crust = crust;
   this.sauce = sauce;
@@ -66,14 +66,15 @@ function Pizza(size, crust, sauce, cheeseType, cheeseAmmount, meats, veggies){
 };
 
 function attachContactListeners(newOrder) {
+  console.log(this.id);
   $("ul#pizzaResults").on("click", "li", function() {
-    showDetails(newOrder, this.name);
+    showDetails(newOrder, this.id);
   });
 };
 
-function showDetails(newOrder, pizzaName){
-  var pizza = newOrder.findPizza(pizzaName);
-  console.log(pizza);
+function showDetails(newOrder, pizzaId){
+  console.log(pizzaId);
+  var pizza = newOrder.findPizza(pizzaId);
     $("#pizzaDetails").slideDown("slow");
     $("sizeResult").html(pizza.size);
     $("crustResult").html(pizza.crust);
@@ -89,7 +90,6 @@ function showDetails(newOrder, pizzaName){
 
 $(function(){
   var newOrder = new Order;
-  attachContactListeners(newOrder);
   $("#start").click(function(){
     $("#start").hide();
     $(".pizzaSelector").slideDown(1500);
@@ -127,11 +127,13 @@ $(function(){
     newOrder.addPizza(sizeInput, crustInput, sauceInput, cheeseTypeInput, cheeseAmmountInput, meatsInput, veggiesInput);
 
     newOrder.pizzas.forEach(function(pizza){
-      $("#pizzaResults").append("<li>" + pizza.name + "</li>");
+      $("#pizzaResults").append("<li id=" + pizza.id + ">" + pizza.id + "</li>");
     });
+
     var newOrderPrice = newOrder.checkPrice();
     $("#priceResult").text("$" + newOrderPrice);
     $(".pizzaSelector").slideUp(1500);
     $(".result").delay(1400).fadeIn("slow");
   });
+  attachContactListeners(newOrder);
 });
