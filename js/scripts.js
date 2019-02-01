@@ -6,17 +6,18 @@ function Order(){
 Order.prototype.addPizza = function(size, crust, sauce, cheeseType, cheeseAmmount, meats, veggies){
   this.items += 1;
   var newPizza = new Pizza(size, crust, sauce, cheeseType, cheeseAmmount, meats, veggies);
-  newPizza.id = "Pizza " + this.items;
+  newPizza.id = "Pizza:" + this.items;
   this.pizzas.push(newPizza);
 };
 
 Order.prototype.findPizza = function(id){
   for (var i=0; i< this.pizzas.length; i++) {
-      if (this.pizzas[i].id == id) {
-        return this.pizzas[i];
-      }
-    };
-  return false;
+    if (this.pizzas[i].id == id) {
+      return this.pizzas[i];
+    } else {
+      return false;
+    }
+  };
 }
 
 Order.prototype.checkPrice = function(){
@@ -66,22 +67,22 @@ function Pizza(size, crust, sauce, cheeseType, cheeseAmmount, meats, veggies){
 };
 
 function attachContactListeners(newOrder) {
-  console.log(this.id);
   $("ul#pizzaResults").on("click", "li", function() {
+    console.log(this.id);
     showDetails(newOrder, this.id);
   });
 };
 
 function showDetails(newOrder, pizzaId){
-  console.log(pizzaId);
   var pizza = newOrder.findPizza(pizzaId);
+  console.log(pizza);
     $("#pizzaDetails").slideDown("slow");
-    $("sizeResult").html(pizza.size);
-    $("crustResult").html(pizza.crust);
-    $("sauceResult").html(pizza.sauce);
-    $("cheeseResult").html(pizza.cheeseAmmount + " " + pizza.cheeseType);
-    $("meatsResult").html(pizza.meats);
-    $("veggiesResult").html(pizza.veggies);
+    $("#sizeResult").html(pizza.size);
+    $("#crustResult").html(pizza.crust);
+    $("#sauceResult").html(pizza.sauce);
+    $("#cheeseResult").html(pizza.cheeseAmmount + " " + pizza.cheeseType);
+    $("#meatsResult").html(pizza.meats);
+    $("#veggiesResult").html(pizza.veggies);
     // var buttons = $("#buttons");
     // buttons.empty();
     // buttons.append("<button class='deleteButton' id=" +  + pizza.id + ">Delete</button>");
@@ -90,6 +91,7 @@ function showDetails(newOrder, pizzaId){
 
 $(function(){
   var newOrder = new Order;
+  attachContactListeners(newOrder);
   $("#start").click(function(){
     $("#start").hide();
     $(".pizzaSelector").slideDown(1500);
@@ -126,7 +128,9 @@ $(function(){
     });
     newOrder.addPizza(sizeInput, crustInput, sauceInput, cheeseTypeInput, cheeseAmmountInput, meatsInput, veggiesInput);
 
+
     newOrder.pizzas.forEach(function(pizza){
+      console.log(pizza.id);
       $("#pizzaResults").append("<li id=" + pizza.id + ">" + pizza.id + "</li>");
     });
 
@@ -135,5 +139,4 @@ $(function(){
     $(".pizzaSelector").slideUp(1500);
     $(".result").delay(1400).fadeIn("slow");
   });
-  attachContactListeners(newOrder);
 });
