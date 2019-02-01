@@ -12,7 +12,7 @@
       <button class="btn btn-outline-secondary" type="button" id="start">Start</button>
     </div>
     <div class="pizzaSelector">
-      <form>
+      <form class="pizzaSelector">
         <h4>Select Pizza Base:</h4>
         <label for="size">Size</label>
         <select id="size" class="form-control">
@@ -52,103 +52,117 @@
         </select>
 
         <h4>Choose Toppings:</h4>
-        <h5>Meats</h5>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="Pepperoni" id="pepperoni">
-          <label class="form-check-label" for="pepperoni">
-            Pepperoni
-          </label>
+        <div class="meats">
+          <h5>Meats</h5>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Pepperoni" name="meats">
+            <label class="form-check-label" for="pepperoni">
+              Pepperoni
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Sausage" name="meats">
+            <label class="form-check-label" for="sausage">
+              Sausage
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Chicken" name="meats">
+            <label class="form-check-label" for="chicken">
+              Chicken
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Brisket" name="meats">
+            <label class="form-check-label" for="brisket">
+              Brisket
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Bacon " name="meats">
+            <label class="form-check-label" for="bacon">
+              Bacon
+            </label>
+          </div>
         </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="Sausage" id="sausage">
-          <label class="form-check-label" for="sausage">
-            Sausage
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="Chicken" id="chicken">
-          <label class="form-check-label" for="chicken">
-            Chicken
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="Brisket" id="brisket">
-          <label class="form-check-label" for="brisket">
-            Brisket
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="Bacon " id="bacon">
-          <label class="form-check-label" for="bacon">
-            Bacon
-          </label>
-        </div>
-        <h5>Veggies</h5>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="Artichoke Hearts" id="artichokeHearts">
-          <label class="form-check-label" for="artichokeHearts">
-            Artichoke Hearts
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="Arugala" id="arugala">
-          <label class="form-check-label" for="arugala">
-            Arugala
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="Black Olives" id="blackOlives">
-          <label class="form-check-label" for="blackOlives">
-            Black Olives
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="Fresh Tomatos" id="freshTomatos">
-          <label class="form-check-label" for="freshTomatos">
-            Fresh Tomatos
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="Green Olives" id="greenOlives">
-          <label class="form-check-label" for="greenOlives">
-            Green Olives
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="Mushrooms" id="mushrooms">
-          <label class="form-check-label" for="mushrooms">
-            Mushrooms
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="Onions" id="onions">
-          <label class="form-check-label" for="onions">
-            Onions
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="Spinach" id="spinach">
-          <label class="form-check-label" for="spinach">
-            Spinach
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="Roasted Peppers" id="roastedPeppers">
-          <label class="form-check-label" for="roastedPeppers">
-            Roasted Peppers
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="Sun Dried Tomatos" id="sunDriedTomatos">
-          <label class="form-check-label" for="sunDriedTomatos">
-            Sun Dried Tomatos
-          </label>
+        <br>
+        <div class="veggies">
+          <h5>Veggies</h5>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Artichoke Hearts" name="veggies">
+            <label class="form-check-label" for="artichokeHearts">
+              Artichoke Hearts
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Arugala" name="veggies">
+            <label class="form-check-label" for="arugala">
+              Arugala
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Black Olives" name="veggies">
+            <label class="form-check-label" for="blackOlives">
+              Black Olives
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Fresh Tomatos" name="veggies">
+            <label class="form-check-label" for="freshTomatos">
+              Fresh Tomatos
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Green Olives" name="veggies">
+            <label class="form-check-label" for="greenOlives">
+              Green Olives
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Mushrooms" name="veggies">
+            <label class="form-check-label" for="mushrooms">
+              Mushrooms
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Onions" name="veggies">
+            <label class="form-check-label" for="onions">
+              Onions
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Spinach" name="veggies">
+            <label class="form-check-label" for="spinach">
+              Spinach
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Roasted Peppers" name="veggies">
+            <label class="form-check-label" for="roastedPeppers">
+              Roasted Peppers
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="Sun Dried Tomatos" name="veggies">
+            <label class="form-check-label" for="sunDriedTomatos">
+              Sun Dried Tomatos
+            </label>
+          </div>
         </div>
 
         <p>*Vegetarian</p>
         <p>**Gluten Free</p>
-        <button class="btn btn-outline-secondary" type="submit" id="submit"></button>
+        <button class="btn btn-outline-secondary" type="button" id="addPizza">Add Another Pizza</button>
+        <button class="btn btn-outline-secondary" type="submit" id="submit">Done</button>
       </form>
+    </div>
+
+    <div class="result">
+      <h3>Your Order</h3>
+      <ul id="pizzaResults">
+      </ul>
+      <h5>Price:</h5>
+      <p id="priceResult"></p>
     </div>
   </body>
 </html>
