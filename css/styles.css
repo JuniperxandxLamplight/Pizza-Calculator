@@ -5,7 +5,9 @@
 .result{
   display: none;
 }
-
+#pizzaDetails{
+  display: none;
+}
 /* styling */
 body{
   text-align: center;

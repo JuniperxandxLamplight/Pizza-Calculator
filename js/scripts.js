@@ -10,6 +10,15 @@ Order.prototype.addPizza = function(size, crust, sauce, cheeseType, cheeseAmmoun
   this.pizzas.push(newPizza);
 };
 
+Order.prototype.findPizza = function(name){
+  for (var i=0; i< this.pizzas.length; i++) {
+      if (this.pizzas[i].name == name) {
+        return this.pizzas[i];
+      }
+    };
+  return false;
+}
+
 Order.prototype.checkPrice = function(){
   var price = 0;
   this.pizzas.forEach(function(pizza){
@@ -19,7 +28,7 @@ Order.prototype.checkPrice = function(){
       price += 15;
     } else if (pizza.size === "Large (20\")"){
       price += 20;
-    } else if (pizza.size === "Extra Large (25\")"){
+    } else if (pizza.size === "Extra Large (28\")"){
       price += 25;
     }
 
@@ -56,9 +65,31 @@ function Pizza(size, crust, sauce, cheeseType, cheeseAmmount, meats, veggies){
   this.veggies = veggies;
 };
 
+function attachContactListeners(newOrder) {
+  $("ul#pizzaResults").on("click", "li", function() {
+    showDetails(newOrder, this.name);
+  });
+};
+
+function showDetails(newOrder, pizzaName){
+  var pizza = newOrder.findPizza(pizzaName);
+  console.log(pizza);
+    $("#pizzaDetails").slideDown("slow");
+    $("sizeResult").html(pizza.size);
+    $("crustResult").html(pizza.crust);
+    $("sauceResult").html(pizza.sauce);
+    $("cheeseResult").html(pizza.cheeseAmmount + " " + pizza.cheeseType);
+    $("meatsResult").html(pizza.meats);
+    $("veggiesResult").html(pizza.veggies);
+    // var buttons = $("#buttons");
+    // buttons.empty();
+    // buttons.append("<button class='deleteButton' id=" +  + pizza.id + ">Delete</button>");
+}
+
 
 $(function(){
   var newOrder = new Order;
+  attachContactListeners(newOrder);
   $("#start").click(function(){
     $("#start").hide();
     $(".pizzaSelector").slideDown(1500);

@@ -31,9 +31,9 @@
         </select>
         <label for="sauce">Sauce</label>
         <select id="sauce" class="form-control">
-          <option>**Marinara</option>
           <option>Cream</option>
           <option>*Pesto</option>
+          <option>**Marinara</option>
           <option>Garlic Oil</option>
         </select>
         <label for="cheeseType">Type of Cheese</label>
@@ -49,6 +49,8 @@
           <option>Medium</option>
           <option>Extra</option>
         </select>
+        <p>*Vegetarian</p>
+        <p>**Gluten Free</p>
 
         <h4>Choose Toppings:</h4>
         <div class="meats">
@@ -149,8 +151,6 @@
           </div>
         </div>
 
-        <p>*Vegetarian</p>
-        <p>**Gluten Free</p>
         <button class="btn btn-outline-secondary" type="button" id="addPizza">Add Another Pizza</button>
         <button class="btn btn-outline-secondary" type="submit" id="submit">Done</button>
       </form>
@@ -159,6 +159,20 @@
       <h3>Your Order</h3>
       <ul id="pizzaResults">
       </ul>
+      <div id="pizzaDetails">
+        <h4>Pizza Details:</h4>
+        <p>Size:</p>
+        <p id="sizeResult"></p>
+        <p>Crust Type:</p>
+        <p id="crustResult"></p>
+        <p>Sauce:</p>
+        <p id="sauceResult"></p>
+        <p>Cheese:</p>
+        <p id="cheeseResult"></p>
+        Toppings:
+        <p id="meatsResult"></p>
+        <p id="veggiesResult"></p>
+      </div>
       <h5>Price:</h5>
       <p id="priceResult"></p>
     </div>
