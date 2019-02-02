@@ -10,7 +10,36 @@
 }
 /* styling */
 body{
+  margin-left: 23%;
+  margin-right: 23%;
   text-align: center;
+}
+
+.header{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  padding: 4%;
+  background-image: linear-gradient(#ffed2d, #e2a412);
+}
+.pizzaSelector{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  padding: 4%;
+  background-image: linear-gradient(#ffed2d, #e2a412);
+}
+.result{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  padding: 4%;
+  background-image: linear-gradient(#ffed2d, #e2a412);
+}
+#pizzaDetails{
+  padding-bottom: 2%;
+  border-radius: 20px;
+  background-image: linear-gradient(#d1320e, #93320e);
 }
 
 ul{

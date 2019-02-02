@@ -12,17 +12,18 @@ Order.prototype.addPizza = function(size, crust, sauce, cheeseType, cheeseAmmoun
 
 Order.prototype.findPizza = function(id){
   for (var i=0; i< this.pizzas.length; i++) {
+    console.log(this.pizzas[i].id);
+    console.log(id);
     if (this.pizzas[i].id === id) {
       return this.pizzas[i];
-    } else {
-      return false;
-    }
+    };
   };
-}
+};
 
 Order.prototype.checkPrice = function(){
   var price = 0;
   this.pizzas.forEach(function(pizza){
+    debugger;
     if (pizza.size === "Small (12\")"){
       price += 10;
     } else if (pizza.size === "Medium (16\")"){
@@ -36,15 +37,16 @@ Order.prototype.checkPrice = function(){
     if (pizza.cheeseAmmount === "Extra"){
       price += 3;
     }
-
-    for (i=0; i<pizza.meats.length; i++){
+    console.log(pizza.meats);
+    for (i=0; i<pizza.meats[0].length; i++){
       if (price >= 25){
         price += 2;
       } else {
         price += 1.5;
-      }
+      };
     };
-    for (i=0; i<pizza.veggies.length; i++){
+    console.log(pizza.veggies);
+    for (i=0; i<pizza.veggies[0].length; i++){
       if (price >= 25){
         price += 1.5;
       } else {
@@ -73,9 +75,6 @@ function attachContactListeners(newOrder) {
 };
 
 function showDetails(newOrder, pizzaId){
-  debugger;
-  console.log(pizzaId);
-  console.log(newOrder.pizzas[1].id);
   var pizza = newOrder.findPizza(pizzaId);
     $("#pizzaDetails").slideDown("slow");
     $("#sizeResult").html(pizza.size);
@@ -110,7 +109,7 @@ $(function(){
     });
     var veggiesInput = [];
     $("input:checkbox[name=veggies]:checked").each(function(){
-      meatsInput.push($(this).val());
+      veggiesInput.push($(this).val());
     });
     newOrder.addPizza(sizeInput, crustInput, sauceInput, cheeseTypeInput, cheeseAmmountInput, meatsInput, veggiesInput);
     console.log(newOrder);
@@ -129,7 +128,7 @@ $(function(){
     });
     var veggiesInput = [];
     $("input:checkbox[name=veggies]:checked").each(function(){
-      meatsInput.push($(this).val());
+      veggiesInput.push($(this).val());
     });
     newOrder.addPizza(sizeInput, crustInput, sauceInput, cheeseTypeInput, cheeseAmmountInput, meatsInput, veggiesInput);
 
